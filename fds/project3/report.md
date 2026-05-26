@@ -219,7 +219,7 @@ void Swap(int index1, int index2) {
 **设计思路**：  
 为了在节点移动时维护 `pos` 数组的准确性，所有节点交换通过封装的 `Swap` 函数，同时交换 `shortestPath` 中的结构体元素，同时更新 `pos` 数组的映射值。  
 `Swim`：当节点被松弛距离减小后，与其父节点（`index / 2`）比较，若更小则向上冒泡。  
-`Sink`：在 `Pop` 操作将末尾节点移至堆顶后，让其与其左右孩子（`index * 2` 和 `index * 2 + 1`）比较，选出三者中最小的进行交换，向下沉淀。
+`Sink`：在 `Pop` 操作将末尾节点移至堆顶后，让其与其左右孩子（`index * 2` 和 `index * 2 + 1`）比较，选出三者中最小的进行交换，向下沉。
 
 **伪代码**：
 ```text
@@ -322,7 +322,7 @@ void Sink(int index) {
         currentE = currentE->next
 返回 true
 ```
-**原代码** ：
+**原代码** ：   
 
 ```C
 bool Verification_Dense(struct node *Vnode, int *sequence) {
